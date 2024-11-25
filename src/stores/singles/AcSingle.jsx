@@ -1,14 +1,14 @@
-import React from "react";
-import { acData } from "../data/ac";
-import { useParams } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import React from 'react';
+import { acData } from '../data/ac';
+import { useParams } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 
-import { useCart } from "../context/CartContext";
+import { useCart } from '../context/CartContext';
 
 const AcSingle = () => {
   const { id } = useParams();
 
-  const {addToCart, cartItems} = useCart()
+  const { addToCart, cartItems } = useCart();
 
   const product = acData.find((item) => item.id === id);
 
@@ -27,12 +27,12 @@ const AcSingle = () => {
             <h3>{product.model}</h3>
           </div>
           <div className="ind-price space">
-            <h2>{product.price}</h2>
+            <h2>₹{product.price}</h2>
           </div>
           <div className="ind-desc space">
             <p>{product.description}</p>
           </div>
-          <button onClick={()=>addToCart(product)}>Add to Cart</button>
+          <button onClick={() => addToCart(product)}>Add to Cart</button>
         </div>
       </div>
     </>
